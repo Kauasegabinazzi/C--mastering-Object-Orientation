@@ -8,6 +8,12 @@ namespace ScreenSound.Modelos
             Nota = nota;
         }
 
-        public int Nota {  get; }
+        public int Nota { get; }
+
+        public static Avaliacao Parse(string txt)
+        {
+            int nota = int.Parse(txt);
+            return new Avaliacao(nota);
+        }
     }
 }
