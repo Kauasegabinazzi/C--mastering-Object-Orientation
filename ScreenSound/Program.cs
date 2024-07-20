@@ -1,4 +1,36 @@
 ﻿using ScreenSound.Modelos;
+using Alura.Filmes;
+
+Artista artista = new Artista("Talia Shire", 25);
+Artista artista2 = new Artista("Christian Bale", 25);
+Artista artista3 = new Artista("Viggo Mortensen", 25);
+
+List<Artista> artistas = new List<Artista>();
+artistas.Add(artista);
+artistas.Add(artista2);
+artistas.Add(artista3);
+
+Filme filme = new Filme("Um sonho de liberdade", 142, artistas);
+Filme filme2 = new Filme("O poderoso chefão", 175, artistas);
+Filme filme3 = new Filme("Batman - O Cavaleiro das Trevas", 152, artistas);
+Filme filme4 = new Filme("Senhor dos Anéis - O Retorno do Rei", 201, artistas);
+Filme filme5 = new Filme("Green Book - O Guia", 130, artistas);
+
+List<Filme> meusFilmesFavoritos = new List<Filme>();
+meusFilmesFavoritos.Add(filme);
+meusFilmesFavoritos.Add(filme2);
+meusFilmesFavoritos.Add(filme3);
+meusFilmesFavoritos.Add(filme4);
+meusFilmesFavoritos.Add(filme5);
+
+foreach (Filme f in meusFilmesFavoritos)
+{
+    Console.WriteLine($"Filme: {f.Titulo}");
+    Console.WriteLine($"Duracao: {f.Duracao}");
+    f.ListarElenco();
+    Console.WriteLine();
+}
+
 
 Banda ira = new Banda("ira");
 ira.AdicionarNota(10);
