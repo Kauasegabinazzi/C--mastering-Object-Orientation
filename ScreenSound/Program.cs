@@ -1,6 +1,12 @@
 ﻿using ScreenSound.Modelos;
 using Alura.Filmes;
 
+using VideoA = VideoFlix.PlataformaA.Video;
+using VideoB = VideoFlix.PlataformaB.Video;
+
+VideoA video1 = new();
+VideoB video2 = new();
+
 Artista artista = new Artista("Talia Shire", 25);
 Artista artista2 = new Artista("Christian Bale", 25);
 Artista artista3 = new Artista("Viggo Mortensen", 25);
