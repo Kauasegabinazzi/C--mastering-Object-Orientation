@@ -228,3 +228,10 @@ void ExibirDetalhes()
 }
 
 ExibirOpcoesDoMenu();
+
+
+Album a1 = new Album("Barões da Pisadinha Ao Vivo");
+Album a2 = new Album("Barões da Pisadinha feat.Anitta");
+Album a3 = new Album("Barões da Pisadinha no Free Jazz Festival");
+
+Console.WriteLine($"Total de objetos criados: {Album.ContadorDeObjetos}");

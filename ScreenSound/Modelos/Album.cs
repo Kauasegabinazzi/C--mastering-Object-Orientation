@@ -2,6 +2,7 @@
 internal class Album
 {
     private List<Musica> musicas = new List<Musica>();
+    public static int ContadorDeObjetos = 0;
 
     public Album(string nome)
     {
@@ -26,4 +27,12 @@ internal class Album
         }
         Console.WriteLine($"\nPara ouvir este álbum inteiro você precisa de {DuracaoTotal}");
     }
+
+    public Album()
+    {
+        ContadorDeObjetos++;
+    }
 }
+
+
+
