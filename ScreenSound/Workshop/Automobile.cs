@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScreenSound.Workshop;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,58 +23,58 @@ public class Vehicle
     }
 }
 
-public class Mecanico
+public class Mechanics
 {
-    public string Nome { get; set; }
-    public string Especialidade { get; set; }
+    public string Name { get; set; }
+    public string Specialty { get; set; }
 
-    public Mecanico(string nome, string especialidade)
+    public Mechanics(string name, string specialty)
     {
-        Nome = nome;
-        Especialidade = especialidade;
+        Name = name;
+        Specialty = specialty;
     }
 }
 
-public class Oficina
+public class Workshop
 {
-    private List<Veiculo> veiculosNaOficina;
+    private List<Vehicle> WorkshopVehicles;
 
-    public Oficina()
+    public Workshop()
     {
-        veiculosNaOficina = new List<Veiculo>();
+        WorkshopVehicles = new List<Vehicle>();
     }
 
-    public void AgendarServico(Veiculo veiculo, Cliente cliente, Mecanico mecanico, string dataAgendamento)
+    public void SchedulingService(Vehicle vehicle, Client client, Mechanics mechanic, string schedulingDates)
     {
-        veiculosNaOficina.Add(veiculo);
+        WorkshopVehicles.Add(vehicle);
 
         // Lógica para agendar o serviço (pode ser expandida conforme necessário)
-        Console.WriteLine($"Serviço agendado para {veiculo.Placa} em {dataAgendamento} com o mecânico {mecanico.Nome}.");
+        Console.WriteLine($"Serviço agendado para {vehicle.LicensePlate} em {schedulingDates} com o mecânico {mechanic.Name}.");
     }
 
-    public void RealizarServico(Veiculo veiculo, Mecanico mecanico)
+    public void DoService(Vehicle vehicle, Mechanics mechanic)
     {
-        if (veiculosNaOficina.Contains(veiculo))
+        if (WorkshopVehicles.Contains(vehicle))
         {
 
-            Console.WriteLine($"Serviço realizado em {veiculo.Placa} pelo mecânico {mecanico.Nome}.");
-            veiculosNaOficina.Remove(veiculo);
+            Console.WriteLine($"Serviço realizado em {vehicle.LicensePlate} pelo mecânico {mechanic.Name}.");
+            WorkshopVehicles.Remove(vehicle);
         }
         else
         {
-            Console.WriteLine($"O veículo {veiculo.Placa} não está na oficina para realizar o serviço.");
+            Console.WriteLine($"O veículo {vehicle.LicensePlate} não está na oficina para realizar o serviço.");
         }
     }
 }
 
-public class Cliente
+public class Client
 {
-    public string Nome { get; set; }
-    public string Contato { get; set; }
+    public string Name { get; set; }
+    public string Contact { get; set; }
 
-    public Cliente(string nome, string contato)
+    public Client(string name, string contact)
     {
-        Nome = nome;
-        Contato = contato;
+        Name = name;
+        Contact = contact;
     }
 }
