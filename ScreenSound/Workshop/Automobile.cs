@@ -48,7 +48,6 @@ public class Workshop
     {
         WorkshopVehicles.Add(vehicle);
 
-        // Lógica para agendar o serviço (pode ser expandida conforme necessário)
         Console.WriteLine($"Serviço agendado para {vehicle.LicensePlate} em {schedulingDates} com o mecânico {mechanic.Name}.");
     }
 
