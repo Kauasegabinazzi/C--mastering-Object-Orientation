@@ -6,6 +6,7 @@ using VideoA = VideoFlix.PlataformaA.Video;
 using VideoB = VideoFlix.PlataformaB.Video;
 using ScreenSound.Workshop;
 using ScreenSound.Calculations;
+using ScreenSound.Menus;
 
 //VideoA video1 = new();
 //VideoB video2 = new();
@@ -96,7 +97,9 @@ void ExibirOpcoesDoMenu()
             AvaliarUmaBanda();
             break;
         case 5:
-            ExibirDetalhes();
+            MenuExibirDetalhes menu = new MenuExibirDetalhes();
+            menu.Execute(bandasRegistradas);
+            ExibirOpcoesDoMenu();
             break;
         case -1:
             Console.WriteLine("Tchau tchau :)");
@@ -201,36 +204,7 @@ void AvaliarUmaBanda()
 
 }
 
-void ExibirDetalhes()
-{
-    Console.Clear();
-    ExibirTituloDaOpcao("Exibir detalhes da banda");
-    Console.Write("Digite o nome da banda que deseja conhecer melhor: ");
-    string nomeDaBanda = Console.ReadLine()!;
-    if (bandasRegistradas.ContainsKey(nomeDaBanda))
-    {
-        Banda banda = bandasRegistradas[nomeDaBanda];
-        Console.WriteLine($"\nA média da banda {nomeDaBanda} é {banda.Media}.");
-        /**
-        * ESPAÇO RESERVADO PARA COMPLETAR A FUNÇÃO
-        */
-        Console.WriteLine("Digite uma tecla para votar ao menu principal");
-        Console.ReadKey();
-        Console.Clear();
-        ExibirOpcoesDoMenu();
-
-    }
-    else
-    {
-        Console.WriteLine($"\nA banda {nomeDaBanda} não foi encontrada!");
-        Console.WriteLine("Digite uma tecla para voltar ao menu principal");
-        Console.ReadKey();
-        Console.Clear();
-        ExibirOpcoesDoMenu();
-    }
-}
-
-//ExibirOpcoesDoMenu();
+ExibirOpcoesDoMenu();
 
 
 //Album a1 = new Album("Barões da Pisadinha Ao Vivo");
@@ -250,6 +224,6 @@ void ExibirDetalhes()
 //    oficina.DoService(meuCarro, mecanico);
 //}
 
-tipo tipo = new tipo();
-tipo.Calculators(5, 3, '^');
+//tipo tipo = new tipo();
+//tipo.Calculators(5, 3, '^');
 
