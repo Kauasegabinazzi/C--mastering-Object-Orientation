@@ -8,10 +8,17 @@ ira.AdicionarNota(new Avaliacao(6));
 
 Banda beatles = new Banda("beatles");
 
-
 Dictionary<string, Banda> bandasRegistradas = new();
 bandasRegistradas.Add(ira.Nome, ira);
 bandasRegistradas.Add(beatles.Nome, beatles);
+
+Dictionary<int, Menu> opcoes = new();
+opcoes.Add(1, new MenuRegistrarBanda());
+opcoes.Add(2, new MenuRegistrarAlbum());
+opcoes.Add(3, new MenuMostrarBandasRegistradas());
+opcoes.Add(4, new AvaliarBanda());
+opcoes.Add(5, new MenuExibirDetalhes());
+opcoes.Add(-1, new MenuSair());
 
 void ExibirLogo()
 {
@@ -41,6 +48,15 @@ void ExibirOpcoesDoMenu()
     string opcaoEscolhida = Console.ReadLine()!;
     int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida);
 
+    if (opcoes.ContainsKey(opcaoEscolhidaNumerica))
+    {
+        Menu menuExibir = opcoes[opcaoEscolhidaNumerica];
+    }
+    else
+    {
+        Console.WriteLine("Opção inválida");
+    }
+
     switch (opcaoEscolhidaNumerica)
     {
         case 1:
@@ -65,7 +81,7 @@ void ExibirOpcoesDoMenu()
             ExibirOpcoesDoMenu();
             break;
         case -1:
-            Console.WriteLine("Tchau tchau :)");
+            Execute();
             break;
         default:
             Console.WriteLine("Opção inválida");
