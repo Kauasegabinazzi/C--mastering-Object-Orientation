@@ -6,7 +6,6 @@ internal class AvaliarBanda : Menu
 {
     public void Executar(Dictionary<string, Banda> bandasRegistradas)
     {
-        Console.Clear();
         ExibirTituloDaOpcao("Avaliar banda");
         Console.Write("Digite o nome da banda que deseja avaliar: ");
         string nomeDaBanda = Console.ReadLine()!;
